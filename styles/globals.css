@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: hsl(221, 71%, 28%);
+  --color-blue-100: hsl(219, 87%, 56%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-100: hsl(0, 0%, 95%);
+  --color-light-200: hsl(0, 0%, 90%);
+  --color-light-300: hsl(0, 0%, 85%);
+}

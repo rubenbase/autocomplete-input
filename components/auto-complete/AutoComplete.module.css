@@ -1,0 +1,37 @@
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete [role='listbox'] {
+  position: absolute;
+  top: 2.3em;
+  z-index: 2;
+  width: 100%;
+  max-height: 12em;
+  overflow-y: scroll;
+  background-color: var(--color-light-100);
+  border: 1px solid var(--color-light-200);
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0;
+  border-radius: 0;
+}
+
+.autocomplete [role='listbox'] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
+}
+
+.autocomplete li[aria-selected='true'] {
+  background: var(--color-white);
+  color: var(--color-blue-100);
+  cursor: pointer;
+}
+
+.autocomplete li:hover {
+  background: var(--color-white);
+  color: var(--color-blue-100);
+  cursor: pointer;
+}
