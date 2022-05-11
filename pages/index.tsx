@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
   // itemToString allows you to map an object coming from the API to a string
   // to show in the autocomplete suggestions
-  const itemToString = (i) => (i ? i.name : '')
+  const itemToString = (i: Suggestion) => (i ? i.name : '')
 
   return (
     <div className="p-4 flex flex-col max-w-xs m-auto">

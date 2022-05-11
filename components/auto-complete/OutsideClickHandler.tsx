@@ -1,11 +1,20 @@
-import React, { useRef, useEffect, useCallback } from 'react'
+import React, { useRef, useEffect, useCallback, ReactNode, HTMLAttributes } from 'react'
 
-const OutsideClickHandler = ({ onOutsideClick, children, ...rest }) => {
-  const wrapperRef = useRef(null)
+interface OutsideClickHandlerProps extends HTMLAttributes<HTMLDivElement> {
+  onOutsideClick: () => void
+  children: ReactNode // in React 18+ declaring children here is the recommended instead of using FC
+}
+
+const OutsideClickHandler = ({
+  onOutsideClick,
+  children,
+  ...rest
+}: OutsideClickHandlerProps) => {
+  const wrapperRef = useRef<HTMLDivElement>(null)
 
   const handleClickOutside = useCallback(
-    (event) => {
-      if (wrapperRef?.current && !wrapperRef.current.contains(event.target)) {
+    (event: globalThis.MouseEvent) => {
+      if (wrapperRef?.current && !wrapperRef.current.contains(event.target as Node)) {
         onOutsideClick()
       }
     },
